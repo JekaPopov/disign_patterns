@@ -1,8 +1,8 @@
 package com.company.inteface;
 
-import com.company.product.Product;
+import com.company.product.Report;
 
 public interface PriceHelper {
-    double getPrice(Product product);
-    int getDiscount(Product Id);
+    double getPrice(Report goods);
+    int getDiscount(Report Id);
 }

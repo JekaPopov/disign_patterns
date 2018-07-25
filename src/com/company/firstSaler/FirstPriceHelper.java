@@ -1,18 +1,18 @@
 package com.company.firstSaler;
 
 import com.company.inteface.PriceHelper;
-import com.company.product.Product;
+import com.company.product.Report;
 
-public class FirstPriceHelper implements PriceHelper{
+public class FirstPriceHelper implements PriceHelper {
 
 
     @Override
-    public double getPrice(Product product) {
-        return 150*product.getQty()*getDiscount(product)/100;
+    public double getPrice(Report goods) {
+        return 150 * goods.getQty() * getDiscount(goods) / 100;
     }
 
     @Override
-    public int getDiscount(Product product) {
-        return product.getQty()>3?50:product.getQty()>1?20:0;
+    public int getDiscount(Report goods) {
+        return goods.getQty() > 3 ? 50 : goods.getQty() > 1 ? 20 : 0;
     }
 }

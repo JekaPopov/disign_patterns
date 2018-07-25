@@ -1,27 +1,33 @@
 package com.company.product;
 
 public class ProductBuilder {
-    private Product product;
+    String id;
+    String seller;
+    int qty;
+    String[] service;
 
-    public ProductBuilder(String id, String seller)
-    {
-        product = new Product(id,seller);
+    public ProductBuilder(String id, String seller) {
+        this.id = id;
+        this.seller = seller;
+
     }
 
-    public ProductBuilder qty(int qty)
-    {
-        product.setQty(qty);
+    public ProductBuilder qty(int qty) {
+        this.qty = qty;
         return this;
     }
 
-    public ProductBuilder services (String ... serviceId)
-    {
-        product.setServices(serviceId);
+    public ProductBuilder services(String... service) {
+        this.service = service;
         return this;
     }
 
-    public Product build() {
-        return product;
+
+    public AbstractProduct build() {
+        if (id.startsWith("id"))
+            return new Goods(this);
+        else
+            return new Service(this);
     }
 
 

@@ -7,6 +7,6 @@ public class FirstDocHelper implements DocHelper{
 
     @Override
     public String getReport(String id) {
-        return "Отчет";
+        return "Отчет "+id;
     }
 }
