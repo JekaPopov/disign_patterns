@@ -5,6 +5,7 @@ public class Goods extends AbstractProduct implements Report {
 
     Goods(ProductBuilder builder) {
         super(builder);
+        qty = qty == 0 ? 1 : qty;
     }
 
     @Override
@@ -18,7 +19,7 @@ public class Goods extends AbstractProduct implements Report {
 
     @Override
     public int getQty() {
-        return qty == 0 ? 1 : qty;
+        return qty;
     }
 
     @Override
